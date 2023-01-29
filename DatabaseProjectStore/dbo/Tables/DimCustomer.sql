@@ -1,13 +1,16 @@
 CREATE TABLE [dbo].[DimCustomer] (
-    [Row_ID]      SMALLINT      NOT NULL,
-    [Country]     NVARCHAR (50) NOT NULL,
-    [City]        NVARCHAR (50) NOT NULL,
-    [State]       NVARCHAR (50) NOT NULL,
-    [Postal_Code] INT           NOT NULL,
-    [Region]      NVARCHAR (50) NOT NULL,
-    CONSTRAINT [PK_DimCustomer] PRIMARY KEY CLUSTERED ([Row_ID] ASC)
+    [CustomerKey]   NVARCHAR (50) NOT NULL,
+    [Customer_Name] NVARCHAR (50) NULL,
+    [Segment]       NVARCHAR (50) NULL,
+    [Country]       NVARCHAR (50) NULL,
+    [City]          NVARCHAR (50) NULL,
+    [State]         NVARCHAR (50) NULL,
+    [Postal_Code]   INT           NULL,
+    [Region]        NVARCHAR (50) NULL
 );
+GO
 
-
+ALTER TABLE [dbo].[DimCustomer]
+    ADD CONSTRAINT [PK_DimCustomer] PRIMARY KEY CLUSTERED ([CustomerKey] ASC);
 GO
 
