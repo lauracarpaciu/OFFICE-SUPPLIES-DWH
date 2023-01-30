@@ -1,0 +1,18 @@
+SubcategoryKey,SubcategoryAlternateKey,CategoryName,Sub-CategoryName,CategoryKey
+1,1,Furniture,Bookcases,1
+2,2,Furniture,Chairs,1
+3,3,Office Supplies,Labels,2
+4,4,Furniture,Tables,1
+5,5,Office Supplies,Storage,2
+6,6,Furniture,Furnishings,1
+7,7,Office Supplies,Art,2
+8,8,Technology,Phones,3
+9,9,Office Supplies,Binders,2
+10,10,Office Supplies,Appliances,2
+11,11,Office Supplies,Paper,2
+12,12,Technology,Accessories,3
+13,13,Office Supplies,Envelopes,2
+14,14,Office Supplies,Fasteners,2
+15,15,Office Supplies,Supplies,2
+16,16,Technology,Machines,3
+17,17,Technology,Copiers,3

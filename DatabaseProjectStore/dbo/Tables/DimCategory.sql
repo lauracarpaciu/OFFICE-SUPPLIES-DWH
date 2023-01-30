@@ -1,10 +1,15 @@
 CREATE TABLE [dbo].[DimCategory] (
-    [Row_ID]   SMALLINT      NOT NULL,
-    [Category] NVARCHAR (50) NOT NULL,
-    ALTER TABLE [dbo].[DimCategory]
-    ADD CONSTRAINT [PK_DimCategory] PRIMARY KEY CLUSTERED ([CategoryKey] ASC);
+    [CategoryKey]          TINYINT       NOT NULL,
+    [CategoryAlternateKey] TINYINT       NOT NULL,
+    [CategoryName]         NVARCHAR (50) NOT NULL
 );
+GO
 
+ALTER TABLE [dbo].[DimCategory]
+    ADD CONSTRAINT [PK_DimCategory] PRIMARY KEY CLUSTERED ([CategoryKey] ASC);
+GO
 
+CREATE UNIQUE NONCLUSTERED INDEX [Index_1]
+    ON [dbo].[DimCategory]([CategoryAlternateKey] ASC);
 GO
 
