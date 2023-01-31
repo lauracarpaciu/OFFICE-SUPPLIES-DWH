@@ -35,3 +35,13 @@ ALTER TABLE [dbo].[FactSales]
     ADD CONSTRAINT [FK_4] FOREIGN KEY ([SalesTheritoryKey]) REFERENCES [dbo].[DimSalesTerritory] ([DimSalesTheritoryKey]);
 GO
 
+
+CREATE NONCLUSTERED INDEX [nidx_profit]
+    ON [dbo].[FactSales]([Profit] ASC);
+GO
+
+
+CREATE NONCLUSTERED INDEX [nidx_sales]
+    ON [dbo].[FactSales]([Sales] ASC);
+GO
+
