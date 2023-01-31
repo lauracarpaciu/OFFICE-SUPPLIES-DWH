@@ -12,36 +12,30 @@ CREATE TABLE [dbo].[FactSales] (
 GO
 
 ALTER TABLE [dbo].[FactSales]
-    ADD CONSTRAINT [PK_FactSales] PRIMARY KEY CLUSTERED ([SalesKey] ASC);
+    ADD CONSTRAINT [FK_4] FOREIGN KEY ([SalesTheritoryKey]) REFERENCES [dbo].[DimSalesTerritory] ([DimSalesTheritoryKey]);
 GO
-
-
-ALTER TABLE [dbo].[FactSales]
-    ADD CONSTRAINT [FK_1] FOREIGN KEY ([CustomerKey]) REFERENCES [dbo].[DimCustomer] ([CustomerKey]);
-GO
-
 
 ALTER TABLE [dbo].[FactSales]
     ADD CONSTRAINT [FK_2] FOREIGN KEY ([OrderKey]) REFERENCES [dbo].[DimOrder] ([OrderKey]);
 GO
 
-
 ALTER TABLE [dbo].[FactSales]
     ADD CONSTRAINT [FK_3] FOREIGN KEY ([ProductKey]) REFERENCES [dbo].[DimProduct] ([ProductKey]);
 GO
 
+ALTER TABLE [dbo].[FactSales]
+    ADD CONSTRAINT [FK_1] FOREIGN KEY ([CustomerKey]) REFERENCES [dbo].[DimCustomer] ([CustomerKey]);
+GO
 
 ALTER TABLE [dbo].[FactSales]
-    ADD CONSTRAINT [FK_4] FOREIGN KEY ([SalesTheritoryKey]) REFERENCES [dbo].[DimSalesTerritory] ([DimSalesTheritoryKey]);
+    ADD CONSTRAINT [PK_FactSales] PRIMARY KEY CLUSTERED ([SalesKey] ASC);
 GO
-
-
-CREATE NONCLUSTERED INDEX [nidx_profit]
-    ON [dbo].[FactSales]([Profit] ASC);
-GO
-
 
 CREATE NONCLUSTERED INDEX [nidx_sales]
     ON [dbo].[FactSales]([Sales] ASC, [Profit] ASC);
+GO
+
+CREATE NONCLUSTERED INDEX [nidx_profit]
+    ON [dbo].[FactSales]([Profit] ASC);
 GO
 

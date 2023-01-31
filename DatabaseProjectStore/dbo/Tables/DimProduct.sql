@@ -7,16 +7,16 @@ CREATE TABLE [dbo].[DimProduct] (
 GO
 
 ALTER TABLE [dbo].[DimProduct]
+    ADD CONSTRAINT [FK_5] FOREIGN KEY ([SubcategoryKey]) REFERENCES [dbo].[DimSubCategory] ([SubcategoryKey]);
+GO
+
+
+ALTER TABLE [dbo].[DimProduct]
     ADD CONSTRAINT [PK_DimProduct] PRIMARY KEY CLUSTERED ([ProductKey] ASC);
 GO
 
 
 CREATE UNIQUE NONCLUSTERED INDEX [Index_1]
     ON [dbo].[DimProduct]([ProductAlternateKey] ASC);
-GO
-
-
-ALTER TABLE [dbo].[DimProduct]
-    ADD CONSTRAINT [FK_5] FOREIGN KEY ([SubcategoryKey]) REFERENCES [dbo].[DimSubCategory] ([SubcategoryKey]);
 GO
 

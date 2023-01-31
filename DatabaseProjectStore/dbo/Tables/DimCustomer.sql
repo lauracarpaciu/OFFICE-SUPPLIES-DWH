@@ -6,11 +6,6 @@ CREATE TABLE [dbo].[DimCustomer] (
 );
 GO
 
-ALTER TABLE [dbo].[DimCustomer]
-    ADD CONSTRAINT [PK_DimCustomer] PRIMARY KEY CLUSTERED ([CustomerKey] ASC);
-GO
-
-
 CREATE UNIQUE NONCLUSTERED INDEX [Index_1]
     ON [dbo].[DimCustomer]([CustomerAlternateKey] ASC);
 GO
@@ -18,5 +13,10 @@ GO
 
 CREATE NONCLUSTERED INDEX [nidx_customer_name]
     ON [dbo].[DimCustomer]([Customer_Name] ASC, [Segment] ASC);
+GO
+
+
+ALTER TABLE [dbo].[DimCustomer]
+    ADD CONSTRAINT [PK_DimCustomer] PRIMARY KEY CLUSTERED ([CustomerKey] ASC);
 GO
 

@@ -8,6 +8,7 @@ CREATE TABLE [dbo].[DimSalesTerritory] (
 );
 GO
 
+
 ALTER TABLE [dbo].[DimSalesTerritory]
     ADD CONSTRAINT [PK_DimSalesTerritory] PRIMARY KEY CLUSTERED ([DimSalesTheritoryKey] ASC);
 GO
