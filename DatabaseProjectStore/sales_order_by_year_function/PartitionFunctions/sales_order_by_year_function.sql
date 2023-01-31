@@ -1,0 +1,5 @@
+CREATE PARTITION FUNCTION [sales_order_by_year_function](DATE)
+    AS RANGE
+    FOR VALUES ('12/31/2014 00:00:00', '12/31/2015 00:00:00', '12/31/2016 00:00:00', '12/31/2017 00:00:00');
+GO
+

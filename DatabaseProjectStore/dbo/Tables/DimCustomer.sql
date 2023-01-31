@@ -15,3 +15,8 @@ CREATE UNIQUE NONCLUSTERED INDEX [Index_1]
     ON [dbo].[DimCustomer]([CustomerAlternateKey] ASC);
 GO
 
+
+CREATE NONCLUSTERED INDEX [nidx_customer_name]
+    ON [dbo].[DimCustomer]([Customer_Name] ASC, [Segment] ASC);
+GO
+
