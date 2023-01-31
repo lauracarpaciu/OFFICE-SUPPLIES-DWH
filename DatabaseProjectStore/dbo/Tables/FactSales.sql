@@ -42,6 +42,6 @@ GO
 
 
 CREATE NONCLUSTERED INDEX [nidx_sales]
-    ON [dbo].[FactSales]([Sales] ASC);
+    ON [dbo].[FactSales]([Sales] ASC, [Profit] ASC);
 GO
 
