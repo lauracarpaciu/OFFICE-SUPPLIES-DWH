@@ -1,9 +1,11 @@
-CREATE VIEW dbo.product_info
+CREATE VIEW [dbo].[product_info]
 AS
 SELECT
-    p.Product_Name, 
-   c.Sub_CategoryName,
-   s.Sales
+p.Product_Name, 
+c.Sub_CategoryName,
+s.Sales,
+s.Discount,
+s.Quantity
    
 FROM DimSubCategory c
  
