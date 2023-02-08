@@ -1,4 +1,4 @@
-CREATE VIEW dbo.min_list_price
+CREATE VIEW [dbo].[min_list_price]
 AS
 SELECT
 c.Sub_CategoryName,
@@ -11,6 +11,6 @@ INNER JOIN  FactSales s
 GROUP BY
 c.Sub_CategoryName
 HAVING 
-    MIN(s.Sales) > 500;
+    MIN(s.Sales) > 10;
 GO
 

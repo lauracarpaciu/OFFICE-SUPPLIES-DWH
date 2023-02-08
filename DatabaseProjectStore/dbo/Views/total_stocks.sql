@@ -1,7 +1,7 @@
-CREATE VIEW dbo.total_stocks
+CREATE VIEW [dbo].[total_stocks]
 AS
 SELECT
--- p.Product_Name, 
+p.Product_Name, 
 c.Sub_CategoryName,
 SUM(s.Quantity) total_stocks 
 FROM DimSubCategory c
@@ -10,8 +10,8 @@ INNER JOIN DimProduct p
 INNER JOIN  FactSales s
         ON s.ProductKey = p.ProductKey
 GROUP BY
-c.Sub_CategoryName,
-p.Product_Name
+p.Product_Name,
+c.Sub_CategoryName
 HAVING
 SUM(s.Quantity)>20;
 GO
