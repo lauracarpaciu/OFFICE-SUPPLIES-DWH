@@ -1,18 +1,19 @@
 CREATE TABLE [dbo].[FactSales] (
-    [SalesKey]          SMALLINT     NOT NULL,
-    [OrderKey]          INT          NULL,
-    [CustomerKey]       INT          NULL,
-    [SalesTheritoryKey] INT          NULL,
-    [ProductKey]        INT          NULL,
-    [Sales]             MONEY        NULL,
-    [Quantity]          TINYINT      NULL,
-    [Discount]          DECIMAL (18) NULL,
-    [Profit]            MONEY        NULL
+    [SalesKey]          SMALLINT         NOT NULL,
+    [OrderKey]          INT              NULL,
+    [CustomerKey]       INT              NULL,
+    [SalesTheritoryKey] INT              NULL,
+    [ProductKey]        INT              NULL,
+    [Sales]             MONEY            NULL,
+    [Quantity]          TINYINT          NULL,
+    [Discount]          DECIMAL (18, 10) NULL,
+    [Profit]            MONEY            NULL,
+    [To_do]             NVARCHAR (50)    NULL
 );
 GO
 
 ALTER TABLE [dbo].[FactSales]
-    ADD CONSTRAINT [FK_4] FOREIGN KEY ([SalesTheritoryKey]) REFERENCES [dbo].[DimSalesTerritory] ([DimSalesTheritoryKey]);
+    ADD CONSTRAINT [FK_4] FOREIGN KEY ([ProductKey]) REFERENCES [dbo].[DimProduct] ([ProductKey]);
 GO
 
 ALTER TABLE [dbo].[FactSales]
@@ -20,7 +21,7 @@ ALTER TABLE [dbo].[FactSales]
 GO
 
 ALTER TABLE [dbo].[FactSales]
-    ADD CONSTRAINT [FK_3] FOREIGN KEY ([ProductKey]) REFERENCES [dbo].[DimProduct] ([ProductKey]);
+    ADD CONSTRAINT [FK_3] FOREIGN KEY ([SalesTheritoryKey]) REFERENCES [dbo].[DimSalesTerritory] ([DimSalesTheritoryKey]);
 GO
 
 ALTER TABLE [dbo].[FactSales]
@@ -29,13 +30,5 @@ GO
 
 ALTER TABLE [dbo].[FactSales]
     ADD CONSTRAINT [PK_FactSales] PRIMARY KEY CLUSTERED ([SalesKey] ASC);
-GO
-
-CREATE NONCLUSTERED INDEX [nidx_sales]
-    ON [dbo].[FactSales]([Sales] ASC, [Profit] ASC);
-GO
-
-CREATE NONCLUSTERED INDEX [nidx_profit]
-    ON [dbo].[FactSales]([Profit] ASC);
 GO
 

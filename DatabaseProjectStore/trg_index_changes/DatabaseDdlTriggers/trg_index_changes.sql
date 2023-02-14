@@ -18,4 +18,7 @@ BEGIN
     );
 END;
 GO
+DISABLE TRIGGER [trg_index_changes]
+    ON DATABASE;
+GO
 
