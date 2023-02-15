@@ -8,7 +8,8 @@ CREATE TABLE [dbo].[FactSales] (
     [Quantity]          TINYINT          NULL,
     [Discount]          DECIMAL (18, 10) NULL,
     [Profit]            MONEY            NULL,
-    [To_do]             NVARCHAR (50)    NULL
+    [To_do]             NVARCHAR (50)    NULL,
+    [discount_value]    DECIMAL (18)     NULL
 );
 GO
 

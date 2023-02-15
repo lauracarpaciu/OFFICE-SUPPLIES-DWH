@@ -1,7 +1,7 @@
 CREATE TABLE [dbo].[DimCategory] (
     [CategoryKey]          TINYINT       NOT NULL,
     [CategoryAlternateKey] TINYINT       NOT NULL,
-    [CategoryName]         NVARCHAR (50) NOT NULL
+    [CategoryName]         NVARCHAR (20) NULL
 );
 GO
 
