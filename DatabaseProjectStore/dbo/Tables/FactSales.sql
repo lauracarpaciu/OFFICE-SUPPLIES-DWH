@@ -33,3 +33,8 @@ ALTER TABLE [dbo].[FactSales]
     ADD CONSTRAINT [PK_FactSales] PRIMARY KEY CLUSTERED ([SalesKey] ASC);
 GO
 
+
+CREATE NONCLUSTERED INDEX [ix_cust_phone]
+    ON [dbo].[FactSales]([Sales] ASC) WHERE ([Sales] IS NOT NULL);
+GO
+
